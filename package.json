@@ -3,11 +3,11 @@
   "displayName": "Auto.js-VSCodeExt-Fixed",
   "description": "基于Auto.js-VSCode-Extension，优化了项目传输速度、支持直接在output面板查看执行记录、支持查看开发文档",
   "version": "0.3.8",
-  "publisher": "710850609",
+  "publisher": "wjj",
   "icon": "logo.png",
   "repository": {
     "type": "github",
-    "url": "https://github.com/710850609/Auto.js-VSCode-Extension"
+    "url": "https://github.com/w-jj/Auto.js-VSCode-Extension"
   },
   "engines": {
     "vscode": "^1.17.0"
@@ -38,11 +38,31 @@
     ],
 		"menus": {
 			"editor/title": [
-				{
+        {
+					"when": "resourceLangId == javascript",
+					"command": "extension.run",
+					"group": "navigation@1"
+        },
+        {
+					"when": "resourceLangId == javascript",
+					"command": "extension.stop",
+					"group": "navigation@2"
+        },
+        {
+					"when": "resourceLangId == javascript",
+					"command": "extension.save",
+					"group": "navigation@3"
+        },
+        {
+					"when": "resourceLangId == javascript",
+					"command": "extension.startServer",
+					"group": "navigation@4"
+        },
+        {
 					"when": "resourceLangId == javascript",
 					"command": "extension.openDocument",
-					"group": "navigation"
-				}
+					"group": "navigation@5"
+        }
 			]
 		},
     "commands": [
@@ -55,41 +75,49 @@
       {
         "command": "extension.startServer",
         "title": "开启服务(Start Server)",
+        "icon": "启动流程.png",
 				"category": "Auto.js"
       },
       {
         "command": "extension.stopServer",
         "title": "停止服务(Stop Server)",
+        "icon": "已挂起.png",
 				"category": "Auto.js"
       },
       {
         "command": "extension.run",
-				"title": "运行脚本(Run)",
+        "title": "运行脚本(Run)",
+        "icon": "启动.png",
 				"category": "Auto.js"
       },
       {
         "command": "extension.runOnDevice",
-				"title": "在指定设备运行脚本(Run On Device)",
+        "title": "在指定设备运行脚本(Run On Device)",
+        "icon": "启动.png",
 				"category": "Auto.js"
       },
       {
         "command": "extension.stop",
-				"title": "停止当前脚本(Stop)",
+        "title": "停止当前脚本(Stop)",
+        "icon": "已停止.png",
 				"category": "Auto.js"
       },
       {
         "command": "extension.stopAll",
-				"title": "停止所有脚本(Stop All)",
+        "title": "停止所有脚本(Stop All)",
+        "icon": "已停止.png",
 				"category": "Auto.js"
       },
       {
         "command": "extension.rerun",
-				"title": "重新运行(Rerun)",
+        "title": "重新运行(Rerun)",
+        "icon": "恢复.png",
 				"category": "Auto.js"
       },
       {
         "command": "extension.save",
-				"title": "保存到所有设备(Save)",
+        "title": "保存到所有设备(Save)",
+        "icon": "导入.png",
 				"category": "Auto.js"
       },
       {
